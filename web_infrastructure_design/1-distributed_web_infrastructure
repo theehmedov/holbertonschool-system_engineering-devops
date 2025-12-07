@@ -1,0 +1,25 @@
+             User
+              |
+        [Browser]
+              |
+       DNS Lookup
+ www.foobar.com → Load Balancer (HAProxy)
+              |
+      +-----------------+
+      | Round Robin LB  |
+      +-----------------+
+        /           \
+       /             \
++-----------+   +-----------+
+| Server 1  |   | Server 2  |
+|-----------|   |-----------|
+| Nginx     |   | Nginx     |
+| App Server|   | App Server|
+| App Files |   | App Files |
++-----------+   +-----------+
+       \            /
+        \          /
+         +----------------+
+         | MySQL Database |
+         | Primary / Replica|
+         +----------------+

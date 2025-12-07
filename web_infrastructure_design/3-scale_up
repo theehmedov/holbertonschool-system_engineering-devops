@@ -1,0 +1,15 @@
+           User
+            |
+        [Browser]
+            |
+       DNS → HAProxy Cluster
+            |
+   ---------------------
+   |                   |
+ Web Server 1       Web Server 2
+   |                   |
+   +--------+----------+
+            |
+   Application Server
+            |
+      Database Server

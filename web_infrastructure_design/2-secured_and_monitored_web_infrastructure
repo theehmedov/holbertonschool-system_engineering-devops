@@ -1,0 +1,29 @@
+          User
+           |
+       [Browser]
+           |
+       DNS Lookup
+ www.foobar.com → Load Balancer (HAProxy)
+           |
+      +-----------+
+      | SSL/HTTPS |
+      +-----------+
+           |
+   -----------------
+   |       |       |
+Firewall Firewall Firewall
+   |       |       |
++---------+ +---------+ +---------+
+| Server1 | | Server2 | | Server3 |
+|---------| |---------| |---------|
+| Nginx   | | Nginx   | | Nginx   |
+| App     | | App     | | App     |
+| Files   | | Files   | | Files   |
+| Monitor | | Monitor | | Monitor |
++---------+ +---------+ +---------+
+      \           /
+       \         /
+        +---------------+
+        | MySQL Database|
+        | Primary/Replica|
+        +---------------+
