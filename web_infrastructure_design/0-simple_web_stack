@@ -1,0 +1,20 @@
+            User
+             |
+        [Browser]
+             |
+       DNS Lookup
+   www.foobar.com → 8.8.8.8
+             |
+         [Server]
+     +-----------------+
+     |  Nginx Web Server|
+     +-----------------+
+             |
+       Application Server
+     (processes app code)
+             |
+         MySQL Database
+     (stores and retrieves data)
+             |
+           Filesystem
+     (application files, static assets)
